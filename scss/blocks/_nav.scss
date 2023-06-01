@@ -1,0 +1,17 @@
+.nav {
+    letter-spacing: 0.05em;
+}
+.nav__list {
+    display: flex;
+    column-gap: 40px;
+}
+
+.nav__list-item a {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+
+}
+

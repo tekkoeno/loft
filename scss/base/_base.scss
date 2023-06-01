@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap');
+@import './vars';
+@import './mixins';
+body {
+    background-color: $dark;
+    font-family: $font-main;
+    color: $white;
+    font-size: 16px;
+}
+a {
+    color: $white;
+    transition: color .2s ease-in-out;
+    &:hover {
+        color: $accent;
+    }
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    &--sm {
+        max-width: 840px;
+    }
+}
+.text-right {
+    text-align: right;
+}
+.visually-hidden {
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.none {
+    display: none !important ;
+
+}
+.title-2 {
+    font-family: $font-accent;
+    font-weight: 700;
+    font-size: 36px;
+    color: $accent;
+    @include mediaTablet {
+        font-size: 28px;
+    }
+}
+.link-bold {
+    color: $accent;
+    font-weight: 700;
+}
+.form__privacy {
+    text-align: center;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.23;
+    color: $muted;
+    @include mediaTablet {
+        &--bottom {
+            grid-row: 4 / 5;
+        }
+    }
+}
+.no-scroll {
+    overflow-y: hidden;
+}

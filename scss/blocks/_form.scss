@@ -1,0 +1,31 @@
+
+.form__input {
+    height: 50px;
+    padding: 12px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .2);
+    transition: background-color .2s ease-in-out;
+    color: $white;
+    font-size: 14px;
+
+    &::placeholder {
+        color: $placeholder;
+    }
+    &:focus {
+        background-color: rgba(255, 255, 255, .25);
+    }
+}
+
+.form__btn {
+    height: 50px;
+    font-size: 16px;
+    color: $white;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px;
+    background-color: $accent;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+        background-color: saturate($accent, 10%);
+    }
+}
