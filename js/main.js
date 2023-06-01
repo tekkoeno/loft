@@ -36,14 +36,32 @@ function init() {
         zoom: 17
     });
     var myPlacemark = new ymaps.Placemark([42.857717642023694, 74.60883241833699],
-        {},
+        {
+            balloonContent: `
+				<div class="balloon">
+					<div class="balloon__address">Мой дом -_-</div>
+					<div class="balloon__contacts">
+						<a href="tel:+78121234567">+8 (812) 123-45-67</a>
+					</div>
+				</div>
+			`,
+        },
         {
             iconLayout: 'default#image',
             iconImageHref: './img/map/location-pin.svg',
             iconImageSize: [30, 42],
             iconImageOffset: [-20, -40]
         });
+    myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+    myMap.controls.remove('searchControl'); // удаляем поиск
+    myMap.controls.remove('trafficControl'); // удаляем контроль трафика
+    myMap.controls.remove('typeSelector'); // удаляем тип
 
-    map.geoObjects.add(myPlacemark);
-    
+    // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    myMap.controls.remove('rulerControl'); // удаляем контрол правил
+    myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально) 
+
+    myMap.geoObjects.add(myPlacemark);
+    myPlacemark.balloon.open();
 }
